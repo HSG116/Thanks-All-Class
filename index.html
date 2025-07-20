@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> شكرًا من القلب – لمن علمونا في الظل والنور</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://i.postimg.cc/B6P6Hhpv/graduation-cap-solid.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #2196F3;
+            color: white;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(33, 150, 243, 0.6),
+                        0 0 0 8px rgba(33, 150, 243, 0.2);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(33, 150, 243, 0.6),
+                            0 0 0 0 rgba(33, 150, 243, 0.4);
+            }
+            70% {
+                box-shadow: 0 4px 20px rgba(33, 150, 243, 0.6),
+                            0 0 0 15px rgba(33, 150, 243, 0);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(33, 150, 243, 0.6),
+                            0 0 0 0 rgba(33, 150, 243, 0);
+            }
+        }
+
+        .chat-button:hover {
+            background: #1976D2;
+            transform: scale(1.1) rotate(8deg);
+            box-shadow: 0 6px 30px rgba(33, 150, 243, 0.8),
+                        0 0 0 12px rgba(33, 150, 243, 0.2);
+        }
+
+        .chat-button i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <h1 class="splash-title">🎓 شكرًا من القلب – لمن علمونا في الظل والنور</h1>
+            <div class="typewriter-container">
+                <p id="typewriter-text" class="typewriter-text"></p>
+                <span class="cursor">|</span>
+            </div>
+        </div>
+        <div class="floating-stars"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <h1 class="main-title">🎓 شكرًا من القلب – لمن علمونا في الظل والنور</h1>
+                <p class="subtitle">إهداء من طلابكم المحبين لكم</p>
+            </div>
+        </header>
+
+        <!-- Floating Words Background -->
+        <div class="floating-words">
+            <span>شكرًا</span>
+            <span>امتنان</span>
+            <span>أمل</span>
+            <span>محبة</span>
+            <span>تقدير</span>
+            <span>عرفان</span>
+        </div>
+
+        <!-- Teachers Section -->
+        <section class="teachers-section">
+            <div class="container">
+                <h2 class="section-title">👨‍🏫 معلمونا الأفاضل</h2>
+                <div class="teachers-grid">
+                    <!-- Math Teacher -->
+                    <div class="teacher-card" data-teacher="hamza">
+                        <div class="teacher-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3 class="teacher-name">أ. حمزة</h3>
+                        <p class="teacher-subject">الرياضيات</p>
+                        <button class="read-message-btn pulse">📜 اقرأ الرسالة</button>
+                    </div>
+
+                    <!-- Islamic Studies Teacher -->
+                    <div class="teacher-card" data-teacher="yazan">
+                        <div class="teacher-icon">
+                            <i class="fa-solid fa-star-and-crescent"></i>
+                        </div>
+                        <h3 class="teacher-name">أ. يزن</h3>
+                        <p class="teacher-subject">التربية الإسلامية</p>
+                        <button class="read-message-btn pulse">📜 اقرأ الرسالة</button>
+                    </div>
+
+                    <!-- Technology Teacher -->
+                    <div class="teacher-card" data-teacher="islam">
+                        <div class="teacher-icon">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="teacher-name">مس إسلام</h3>
+                        <p class="teacher-subject">التكنولوجيا</p>
+                        <button class="read-message-btn pulse">📜 اقرأ الرسالة</button>
+                    </div>
+
+                    <!-- Science Teacher -->
+                    <div class="teacher-card" data-teacher="alya">
+                        <div class="teacher-icon">
+                            <i class="fa-solid fa-flask-vial"></i>
+                        </div>
+                        <h3 class="teacher-name">مس علياء</h3>
+                        <p class="teacher-subject">العلوم</p>
+                        <button class="read-message-btn pulse">📜 اقرأ الرسالة</button>
+                    </div>
+
+                    <!-- English Teacher -->
+                    <div class="teacher-card" data-teacher="amir">
+                        <div class="teacher-icon">
+                            <i class="fa-solid fa-e"></i>
+                        </div>
+                        <h3 class="teacher-name">أ. أمير</h3>
+                        <p class="teacher-subject">اللغة الإنجليزية</p>
+                        <button class="read-message-btn pulse">📜 اقرأ الرسالة</button>
+                    </div>
+
+                    <!-- Arabic Teacher -->
+                    <div class="teacher-card" data-teacher="mohammad">
+                        <div class="teacher-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="teacher-name">أ. محمد الرجوب</h3>
+                        <p class="teacher-subject">اللغة العربية</p>
+                        <button class="read-message-btn pulse">📜 اقرأ الرسالة</button>
+                    </div>
+
+                    <!-- Social Studies Teacher -->
+                    <div class="teacher-card" data-teacher="murad">
+                        <div class="teacher-icon">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <h3 class="teacher-name">أ. مراد</h3>
+                        <p class="teacher-subject">الاجتماعيات</p>
+                        <button class="read-message-btn pulse">📜 اقرأ الرسالة</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Administration Section -->
+        <section class="admin-section">
+            <div class="container">
+                <h2 class="section-title">🏛️ الإدارة والإرشاد</h2>
+                <div class="admin-grid">
+                    <!-- School Administration -->
+                    <div class="admin-card" data-admin="administration">
+                        <div class="admin-icon">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <h3 class="admin-name">🏫 إدارة المدرسة</h3>
+                        <p class="admin-description">مدرسة الخارجي أساسي عليا (23)</p>
+                        <button class="read-message-btn pulse">📜 اقرأ الرسالة</button>
+                    </div>
+
+                    <!-- Counselor -->
+                    <div class="admin-card" data-admin="counselor">
+                        <div class="admin-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="admin-name">🧠 المرشدة آمال أبو زر</h3>
+                        <p class="admin-description">الإرشاد التربوي</p>
+                        <button class="read-message-btn pulse">📜 اقرأ الرسالة</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Students Section -->
+        <section class="students-section">
+            <div class="container">
+                <h2 class="section-title">💬 من طلابكم</h2>
+                <div class="students-grid">
+                    <div class="student-card" data-student="mira">
+                        <div class="student-avatar">👩‍🎓</div>
+                        <h3 class="student-name">ميرا خالد اليازجي</h3>
+                        <button class="student-note-btn">💌 رسالة شكر</button>
+                    </div>
+                    <div class="student-card" data-student="mohammad">
+                        <div class="student-avatar">👨‍🎓</div>
+                        <h3 class="student-name">محمد زياد أبو دقه</h3>
+                        <button class="student-note-btn">💌 رسالة شكر</button>
+                    </div>
+                </div>
+                
+                <!-- Add Message Button -->
+                <div class="add-message-container">
+                    <button id="add-message-btn" class="add-message-btn">🖊️ أضف رسالتك الخاصة</button>
+                </div>
+
+                <!-- Custom Messages -->
+                <div id="custom-messages" class="custom-messages"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>💖 بحب وامتنان من طلابكم</p>
+                <p>أنتم بصمة لن تُنسى ✨</p>
+                <h2 class="section-title">تم عمل الموقع من:</h2>
+                <p class="credit-text"> الطالب: <strong>محمد زياد أبو دقه</strong></p>
+                <p class="credit-text">ومن الطالبة:<strong>ميرا خالد اليازجي</strong></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Message Modal -->
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="message-paper">
+                <h3 id="modal-title" class="modal-title"></h3>
+                <div id="modal-message" class="modal-message"></div>
+                <div class="modal-actions">
+                    <button id="print-btn" class="action-btn">📄 اطبعها كتذكار</button>
+                    <button id="copy-btn" class="action-btn">🔗 انسخ الرسالة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Note Modal -->
+    <div id="student-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="student-note-paper">
+                <h3 id="student-modal-title" class="modal-title"></h3>
+                <div id="student-modal-message" class="student-note-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Message Modal -->
+    <div id="add-message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="add-message-form">
+                <h3>🖊️ أضف رسالة شكر</h3>
+                <form id="message-form">
+                    <div class="form-group">
+                        <label for="student-name">اسم الاستاذ :</label>
+                        <input type="text" id="student-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text">رسالتك:</label>
+                        <textarea id="message-text" rows="5" required placeholder="اكتب رسالتك..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">💌 أرسل عبر واتساب</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Chat Button -->
+    <div class="chat-button">
+        <img src="https://i.postimg.cc/dtKT8Tf9/artificial-intelligence-ai-icon.png" alt="AI Icon" style="width:34px;height:34px;object-fit:contain;" />
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var chatBtn = document.querySelector('.chat-button');
+        if (chatBtn) {
+            chatBtn.addEventListener('click', function() {
+                window.open('AI/ai.html', '_blank');
+            });
+        }
+    });
+    </script>
+
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
